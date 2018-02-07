@@ -10,6 +10,7 @@
         {% if user.is_authenticated %}
         <nav>
             <a href="{% url 'blog:post_new' %}">새글작성</a>
+            <a href="{% url 'blog:post_draft_list' %}">초안목록</a>
         </nav>
         {% endif %}
     </div>
