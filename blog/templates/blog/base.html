@@ -7,14 +7,18 @@
 <body>
     <div>
         <h1><a href="/">내 블로그</a></h1>
-        {% if user.is_authenticated %}
+    </div>
+    {% if user.is_authenticated %}
+        <p>안녕하세요. '{{ user.first_name }}'님</p>
+        <a href="{% url 'logout' %}">로그아웃</a>
         <nav>
             <a href="{% url 'blog:post_new' %}">새글작성</a>
             <a href="{% url 'blog:post_draft_list' %}">초안목록</a>
         </nav>
-        {% endif %}
-    </div>
-    {% block content %}
-    {% endblock %}
+    {% else %}
+        <a href="{% url 'login' %}">로그인</a>
+    {% endif %}
+{% block content %}
+{% endblock %}
 </body>
 </html>
