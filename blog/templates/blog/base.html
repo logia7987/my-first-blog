@@ -7,6 +7,11 @@
 <body>
     <div>
         <h1><a href="/">내 블로그</a></h1>
+        {% if user.is_authenticated %}
+        <nav>
+            <a href="{% url 'blog:post_new' %}">새글작성</a>
+        </nav>
+        {% endif %}
     </div>
     {% block content %}
     {% endblock %}
