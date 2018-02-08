@@ -22,12 +22,19 @@
         <a href="{% url 'blog:post_remove' pk=post.pk %}">삭제하기</a>
     {% endif %}
     <hr>
+    <a href="{% url 'blog:add_comment_to_post' pk=post.pk %}">댓글달기</a>
     {% for comment in post.comments.all %}
+        {% if user.is_authenticated or comment.approved_comment %}
         <div>
             <p>{{ comment.created_date }}</p>
+            {% if not comment.approved_comment %}
+            <a href="{% url 'blog:comment_remove' pk=comment.pk %}">삭제</a>
+            <a href="{% url 'blog:comment_approve' pk=comment.pk %}">승인</a>
+            {% endif %}
             <p>{{ comment.author }}</p>
             <p>{{ comment.text|linebreaksbr }}</p>
         </div>
+        {% endif %}
     {% empty%}
         <p>일등으로 댓글 달어보자! ^^7</p>
     {% endfor %}
