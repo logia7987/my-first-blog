@@ -1,0 +1,230 @@
+@charset 'utf-8';
+
+/* font */
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+
+.clearfix {
+	*zoom: 1;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+a {
+	text-decoration: none;
+}
+/* base */
+div.head {
+	height: 104px;
+	background-color: #417690;
+	position: relative;
+	padding: 10px 10px;
+}
+body {
+	font-family: 'NanumSquare';
+    background:#fff;
+    margin: 0;
+}
+h1 {
+	margin:0;
+}
+a.blogname {
+	color: #fff;
+}
+a.white {
+	color: #fff;
+	font-size: 1.1em;
+}
+p.hello {
+	color: #fff;
+}
+a.member {
+	font-size: 1.1em;
+	padding: 5px 15px;
+	color: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+nav.li_nav {
+	float: right;
+}
+nav a {
+	padding-left: 10px;
+	border-left: 1px solid #fff;
+}
+nav a:first-child {
+	border-left: none;
+	padding-right: 10px;
+}
+footer {
+	margin-top: 90px;
+	background-color: #417690;
+}
+footer p {
+	font-size: 20px;
+	padding: 25px 0;
+	text-align: center;
+	color: #fff;
+}
+
+/* list */
+div.list {
+	margin-top: 4.5em;
+	padding: 0 10px;
+}
+div.list p.list_pub {
+	font-size: 20px;
+}
+div.list h1 {
+	padding: 0 25px 0 10px;
+	margin-bottom: 2.0em;
+}
+div.list h1 a.list_title {
+	color: #417690;
+	font-size: 40px;
+}
+div.list h1 a.list_del {
+	margin-top: 10px;
+	color: #417690;
+	font-size: 25px;
+	float: right;
+}
+div.list p.list_text {
+	display: none;
+}
+p.list_count {
+	font-size: 20px;
+	color: #000;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #417690;
+}
+p.list_count span {
+	background-color: #417690;
+	color: #fff;
+	padding: 10px;
+	border-radius: 25%;
+}
+/* detail */
+nav.detail_edit {
+	margin-top: 25px;
+}
+nav.detail_edit a {
+	font-size: 1.3em;
+	float: right;
+	color: #417690;
+}
+div.detail {
+	padding: 0 10px;
+}
+div.detail_publish p {
+	font-size: 20px;
+	margin-top: 0;
+}
+h1.detail_title {
+	color: #417690;
+	font-size: 40px;
+}
+p.detail_text {
+	font-size: 18px;
+	line-height: 25px;
+}
+a.detail_del {
+	display: block;
+	text-align: right;
+	color: #417690;
+	font-size: 1.2em;
+}
+hr {
+	margin: 20px 0;
+}
+a.detail_comment {
+	display: block;
+	text-align: right;
+	color: #417690;
+	font-size: 1.2em;
+}
+a.detail_publish_post {
+	font-size: 1.3em;
+	float: right;
+	color: #417690;
+}
+p.comment_name {
+	font-size: 1.3em;
+	color: #417690;
+}
+p.comment_create {
+	border-top: 1px solid #417690;
+	padding-top: 10px; 
+	text-align: right;
+	font-size: 1.0em;
+}
+p.comment_author {
+	display: inline-block;
+	padding-bottom: 0.2em;
+	font-size: 1.5em;
+	color: #417690;
+	border-bottom: 1px solid #417690;
+}
+p.comment_text {
+	font-size: 1.1em;
+}
+a.comment_del {
+	color: #417690;
+	font-size: 1.2em;
+	padding-right: 0.3em; 
+	border-right: 1px solid #417690;
+}
+a.comment_approve {
+	color: #417690;
+	font-size: 1.2em;
+}
+/* edit */
+h1.edit {
+	margin-top: 45px;
+	padding: 0 10px;
+	font-size: 2.2em;
+	color: #417690;
+}
+form {
+	padding: 0 20px;
+}
+form input {
+	width: 100%;
+}
+form label {
+	font-size: 1.2em;
+	color: #417690;
+}
+form textarea {
+	width: 100%;
+}
+/* dratft */
+div.draft {
+	padding: 0 0.7em;
+	margin-top: 4.5em;
+}
+p.draft_date {
+	font-size: 1.2em;
+}
+a.draft_title {
+	font-size: 1.5em;
+	color: #417690;
+}
+a.draft_del {
+	padding-left: 1.3em;
+	font-size: 1.2em;
+	color: #417690;
+}
+p.draft_text {
+	font-size: 1.1em;
+}
+/* mq(desk) */
+@media screen and (min-width: 601px){
+	div.list p.list_text {
+		display: block;
+		font-size: 18px;
+		line-height: 25px;
+	}
+}

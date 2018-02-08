@@ -2,15 +2,15 @@
 
 {% block content %}
     {% for post in posts %}
-        <div>
-            <p>created: {{ post.created_date|date:'y-m-d' }}</p>
+        <div class="draft">
+            <p class="draft_date">Created: {{ post.created_date|date:'y-m-d' }}</p>
             <h1>
-                <a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a>
+                <a href="{% url 'blog:post_detail' pk=post.pk %}" class="draft_title">{{ post.title }}</a>
                 {% if user.is_authenticated %}
-                <a href="{% url 'blog:post_remove' pk=post.pk %}">[삭제]</a>
+                <a href="{% url 'blog:post_remove' pk=post.pk %}" class="draft_del">[삭제]</a>
                 {% endif %}
             </h1>
-            <p>{{ post.text | linebreaksbr }}</p>
+            <p class="draft_text">{{ post.text | linebreaksbr }}</p>
         </div>
     {% endfor %}
 {% endblock %}
