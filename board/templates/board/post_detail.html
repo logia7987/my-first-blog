@@ -1,0 +1,23 @@
+{% extends 'board/base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <nav>
+        <a href="">수정하기</a>
+    </nav>
+    {% endif %}
+    <div class="detail clearfix">
+        {% if board.published_date %}
+            <div class="detail_publish">
+                <p>{{ post.published_date }}</p>
+            </div>
+        {% else %}
+            {% if user.is_authenticated %}
+            <a href="" >배포하기</a>
+            {% endif %}
+        {% endif %}
+        <h1>{{ board.title }}</h1>
+        <p>글쓴이: {{ board.author }} | 작성일: {{ board.created_date }} | 수정일: {{ board.modified_date }}</p>
+        <p>{{ board.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}

@@ -1,32 +1,19 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>문건우네 블로그</title>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
-</head>
-<body>
-    <div class="head clearfix">
-        <h1><a href="/" class="blogname">문건우네 블로그</a></h1>
-    {% if user.is_authenticated %}
-        <p class="hello">안녕하세요. '{{ user.first_name }}'님</p>
-        <a href="{% url 'logout' %}" class="member">Log out</a>
-        <nav class="li_nav">
-            <a href="{% url 'blog:post_new' %}" class="white">새글작성</a>
-            <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
-        </nav>
-    {% else %}
-        <a href="{% url 'login' %}" class="member">Log in</a>
-    {% endif %}
-    </div>
-{% block content %}
-{% endblock %}
+{% extends 'base.html' %}
 
-<footer>
-    <p>&copy; Powerd By c22moon.</p>
-</footer>
-</body>
-</html>
+{% block blog %}
+        <div class="head clearfix">
+            <h1><a href="{% url 'blog:post_list' %}" class="blogname">문건우네 블로그</a></h1>
+        {% if user.is_authenticated %}
+            <p class="hello">안녕하세요. '{{ user.first_name }}'님</p>
+            <a href="{% url 'logout' %}" class="member">Log out</a>
+            <nav class="li_nav">
+                <a href="{% url 'blog:post_new' %}" class="white">새글작성</a>
+                <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
+            </nav>
+        {% else %}
+            <a href="{% url 'login' %}" class="member">Log in</a>
+        {% endif %}
+        </div>
+    {% block content %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'board/base.html' %}
+
+{% block content %}
+<ul>
+    {% for board in boards %}
+        <li><a href="{% url 'board:post_detail' pk=board.pk %}">{{ board.id }} | {{ board }} | {{ board.author }} | {{ board.created_date }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

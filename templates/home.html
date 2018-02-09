@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block home %}
+    <div>
+        <h1>'그'가 만든 페이지</h1>
+        <div>
+            <h2><a href="blog/">블로그 최신글</a></h2>
+            <ol>
+                {% for post in posts %}
+                <li><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post }} | {{ post.created_date }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div>
+            <h2><a href="board/">게시판 최신글</a></h2>
+            <ol>
+                {% for board in boards %}
+                <li><a href="{% url 'board:post_detail' pk=board.pk %}">{{ board }} | {{ board.created_date }}</a></li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+{% endblock %}

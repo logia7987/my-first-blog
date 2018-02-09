@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>문건우네</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+    {% block blog %}
+    {% endblock %}
+
+    {% block board %}
+    {% endblock %}
+
+    {% block home %}
+    {% endblock %}
+<footer>
+    <p>&copy; Powerd By c22moon.</p>
+</footer>
+</body>
+</html>
