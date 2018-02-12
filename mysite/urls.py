@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views
-from .views import home
+from .views import home, UserRegisterDone, UserRegister
 
 urlpatterns = [
     url(r'^$', home, name='home'),
@@ -25,4 +25,6 @@ urlpatterns = [
     url(r'^board/', include('board.urls', namespace='board')),
     url(r'^accounts/login/$', views.login, name='login'),
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page':'/'}),
+    url(r'^accounts/register/$', UserRegister.as_view(), name='register'),
+    url(r'^accounts/register/done/$', UserRegisterDone.as_view(), name='register_done'),
 ]

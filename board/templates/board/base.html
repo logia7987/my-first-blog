@@ -1,19 +1,7 @@
 {% extends 'base.html' %}
 
-{% block board %}
-    <div class="head clearfix">
-        <h1><a href="{% url 'board:post_list' %}" class="blogname">게시판</a></h1>
-    {% if user.is_authenticated %}
-        <p class="hello">안녕하세요. '{{ user.first_name }}'님</p>
-        <a href="{% url 'logout' %}" class="member">Log out</a>
-        <nav class="li_nav">
-            <a href="{% url 'board:post_new' %}" class="white">새글작성</a>
-            <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
-        </nav>
-    {% else %}
-        <a href="{% url 'login' %}" class="member">Log in</a>
-    {% endif %}
-    </div>
-    {% block content %}
-    {% endblock %}
+{% block title %}
+    <h1 style="color:#fff;"><a href="/" class="blogname">Home</a> | <a href="{% url 'board:post_list' %}" class="blogname">문건우네 게시판</a></h1>
+{% endblock %}
+{% block content %}
 {% endblock %}

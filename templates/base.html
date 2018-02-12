@@ -10,13 +10,26 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 </head>
 <body>
-    {% block blog %}
+    <div class="head clearfix">
+        {% block title %}
+        {% endblock %}
+        {% if user.is_authenticated %}
+        <p class="hello">안녕하세요. '{{ user.first_name }}'님</p>
+        <a href="{% url 'logout' %}" class="member">Logout</a>
+        <nav class="li_nav">
+            <a href="{% url 'blog:post_new' %}" class="white">새글작성</a>
+            <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
+        </nav>
+        {% else %}
+        <a href="{% url 'login' %}" class="member">Login</a>
+        <a href="{% url 'register' %}" class="member" style="margin-right:3.5em;">Sign up</a>
+        {% endif %}
+    </div>
+    {% block content %}
     {% endblock %}
-
-    {% block board %}
-    {% endblock %}
-
     {% block home %}
+    {% endblock %}
+    {% block register %}
     {% endblock %}
 <footer>
     <p>&copy; Powerd By c22moon.</p>
