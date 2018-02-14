@@ -17,14 +17,16 @@
         <p class="hello">안녕하세요. '{{ user.first_name }}'님</p>
         <a href="{% url 'logout' %}" class="member">Logout</a>
         <nav class="li_nav">
-            <a href="{% url 'blog:post_new' %}" class="white">새글작성</a>
-            <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
+            {% block new %}
+            {% endblock %}
         </nav>
         {% else %}
         <a href="{% url 'login' %}" class="member">Login</a>
         <a href="{% url 'register' %}" class="member" style="margin-right:3.5em;">Sign up</a>
         {% endif %}
     </div>
+    {% block sub_content %}
+    {% endblock %}
     {% block content %}
     {% endblock %}
     {% block home %}

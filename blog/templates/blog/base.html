@@ -3,5 +3,9 @@
 {% block title %}
         <h1 style="color:#fff;"><a href="/" class="blogname">Home</a> | <a href="{% url 'blog:post_list' %}" class="blogname">문건우네 블로그</a></h1>
 {% endblock %}
+{% block new %}
+    <a href="{% url 'blog:post_new' %}" class="white">새글작성</a>
+    <a href="{% url 'blog:post_draft_list' %}" class="white">초안목록</a>
+{% endblock %}
 {% block content %}
 {% endblock %}

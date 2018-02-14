@@ -3,5 +3,19 @@
 {% block title %}
     <h1 style="color:#fff;"><a href="/" class="blogname">Home</a> | <a href="{% url 'board:post_list' %}" class="blogname">문건우네 게시판</a></h1>
 {% endblock %}
+{% block new %}
+    <a href="{% url 'board:post_new' %}" class="white">새글작성</a>
+{% endblock %}
+{% block sub_content %}
+<nav>
+    <ul>
+        <li><a href="{% url 'board:post_list' %}">전체보기</a></li>
+        {% for ctgry in categories %}
+            <li><a href="{% url 'board:post_list' %}?category={{ ctgry }}">{{ ctgry.name }}</a></li>
+        {% endfor %}
+        <li><a href="{% url 'board:post_new' %}">새글작성</a></li>
+    </ul>
+</nav>
+{% endblock %}
 {% block content %}
 {% endblock %}

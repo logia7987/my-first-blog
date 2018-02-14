@@ -14,6 +14,10 @@
 a {
 	text-decoration: none;
 }
+.wrap {
+	width: 980px;
+	margin: auto;
+}
 /* base */
 div.head {
 	height: 104px;
@@ -68,6 +72,28 @@ footer p {
 	text-align: center;
 	color: #fff;
 }
+/* home */
+div.home {
+	padding: 0 1.2em 0;
+}
+div.home ol {
+	padding-top: 1.5em;
+	padding-left: 1.0em; 
+}
+div.home li {
+	font-size: 1.2em;
+}
+div.home_C {
+	margin-top: 2.5em;
+	padding: 1.2em;
+	box-shadow: 2px 2px 5px #ccc;
+}
+div.home_C h2 {
+	display: inline;
+	padding-bottom: 0.6em;
+	border-bottom: 1px solid #417690;
+}
+
 
 /* list */
 div.list {
@@ -105,6 +131,15 @@ p.list_count span {
 	color: #fff;
 	padding: 10px;
 	border-radius: 25%;
+}
+div.board_border {
+	padding: 1.2em;
+}
+div.board_list_f {
+	box-shadow: 2px 2px 5px #ccc; 
+}
+ol.board_list {
+	color: #417690;
 }
 /* detail */
 nav.detail_edit {

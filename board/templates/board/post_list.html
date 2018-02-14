@@ -1,9 +1,15 @@
 {% extends 'board/base.html' %}
 
 {% block content %}
-<ul>
-    {% for board in boards %}
-        <li><a href="{% url 'board:post_detail' pk=board.pk %}">{{ board.id }} | {{ board }} | {{ board.author }} | {{ board.created_date }}</a></li>
-    {% endfor %}
-</ul>
+<div class="board_border">
+	<div class="board_list_f">
+		<h2>{{ categories.title }}</h2>
+		<ol class="board_list">
+		    {% for post in posts %}
+		        <li><a href="{% url 'board:post_detail' pk=post.pk %}"> {{ post }} | {{ post.author }} | {{ post.created_date }} | {{ post.category }}</a></li>
+		    {% endfor %}
+		</ol>
+	</div>
+</div>
 {% endblock %}
+exit()

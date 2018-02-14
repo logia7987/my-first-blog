@@ -4,8 +4,8 @@
 <h1 style="color:#fff;">'그'가 만든 페이지</h1>
 {% endblock %}
 {% block home %}
-    <div>
-        <div>
+    <div class="home">
+        <div class="home_1 home_C">
             <h2><a href="blog/">블로그 최신글</a></h2>
             <ol>
                 {% for post in posts %}
@@ -13,7 +13,7 @@
                 {% endfor %}
             </ol>
         </div>
-        <div>
+        <div class="home_2 home_C">
             <h2><a href="board/">게시판 최신글</a></h2>
             <ol>
                 {% for board in boards %}

@@ -19,5 +19,10 @@
         <h1>{{ board.title }}</h1>
         <p>글쓴이: {{ board.author }} | 작성일: {{ board.created_date }} | 수정일: {{ board.modified_date }}</p>
         <p>{{ board.text|linebreaksbr }}</p>
+        <p>
+            {% for file in files %}
+                <a href="{{ file }}">{{ file }}</a>
+            {% endfor %}
+        </p>
     </div>
 {% endblock %}
