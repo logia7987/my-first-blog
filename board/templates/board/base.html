@@ -13,7 +13,6 @@
         {% for ctgry in categories %}
             <li><a href="{% url 'board:post_list' %}?category={{ ctgry }}">{{ ctgry.name }}</a></li>
         {% endfor %}
-        <li><a href="{% url 'board:post_new' %}">새글작성</a></li>
     </ul>
 </nav>
 {% endblock %}

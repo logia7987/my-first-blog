@@ -1,18 +1,14 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {{ block.super }}
     {% for post in posts %}
         <div class="list">
-            <p class="list_pub">published: {{ post.published_date }}</p>
-            <h1 class="clearfix">
-                <a href="{% url 'blog:post_detail' pk=post.pk %}" class="list_title">{{ post.title }}</a>
-                &nbsp;
+            <h2 class="clearfix">
+                <a href="{% url 'blog:post_detail' pk=post.pk %}" class="list_title">{{ post.title }} | {{ post.created_date }}</a>
                 {% if user.is_authenticated %}
                 <a href="{% url 'blog:post_remove' pk=post.pk %}" class="list_del">[삭제]</a>
                 {% endif %}
-            </h1>
-            <p class="list_text">{{ post.text | linebreaksbr }}</p>
+            </h2>
             <p style="font-weight:bold;" class="list_count">댓글수 : <span class="list_conut_child">{{ post.approved_comments.count }}</span></p>
         </div>
     {% endfor %}

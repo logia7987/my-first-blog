@@ -1,0 +1,17 @@
+{% extends 'home.html' %}
+
+{% block home %}
+    <div class="home">
+        <div class="home_1 home_C">
+            <h2>'{{ tagname }}' (으)로 태그된 글입니다.</h2>
+            <h3>블로그</h3>
+            <ul>
+                {% for post in posts %}
+                <li><a href="{% url 'blog:post_detail' post.pk %}">{{ post }}|{{ post.author }}|{{ post.created_date }}</a></li>
+                {% empty %}
+                <li>'{{ tagname }}' (으)로 태그된 글이 없습니다.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

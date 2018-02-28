@@ -12,5 +12,7 @@
             </h1>
             <p class="draft_text">{{ post.text | linebreaksbr }}</p>
         </div>
+    {% empty %}
+        <h2>초안목록이 없습니다.</h2>
     {% endfor %}
 {% endblock %}
